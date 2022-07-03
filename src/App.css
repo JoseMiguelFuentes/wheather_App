@@ -1,0 +1,184 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+
+
+
+*{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+/* #root{
+  
+} */
+.main-box{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.default{
+  background-image: url('./Images/peefect_day.jpg');
+}
+.drizzle{
+  background-image: url('./Images/rainy-march.gif');
+}
+.thunderstorm{
+  background-image: url('./Images/thunderstorm.gif')
+}
+.rain{
+  background-image: url('./Images/slow-rain.gif')
+}
+.cloudy{
+  background-image: url('./Images/sun-evenig.gif')
+}
+.clear{
+  background-image: url('./Images/green-field.jpg')
+}
+.snow{
+  background-image: url('./Images/snow.gif')
+}
+.fog{
+  background-image: url('./Images/fog.gif')
+}
+.smoke{
+  background-image: url('./Images/smoke.jpg')
+}
+
+
+.App {
+  text-align: center;
+  width: 305px;
+  height: 521px;
+  background-color: rgba(252, 252, 252, 0.546);
+  border-radius: 10px;
+  color: black;
+  position: relative;
+  box-shadow: 0px 0px 15px 0px aquamarine;
+  /* margin:  calc(100% - 521px / 2) auto; */
+}
+
+
+body{
+  background-color: black;
+  color: antiquewhite;
+  
+}
+
+.image__background{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: rgba(95, 97, 217, 0.4);
+  margin: 10px auto;
+  box-shadow: 0px 0px 15px 0px aquamarine;
+}
+
+.change-unit{
+  position: absolute;
+  bottom: 33px;
+  right: 86px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, .6);
+  color: cadetblue;
+  height: 40px;
+  width: 135px;
+  border-radius: 32px;
+  box-shadow: 0px 0px 15px 0px aquamarine;
+  font-size: 1.5rem;
+  font-family: 'Comic Sans MS';
+}
+.change-unit:hover{
+  background-color: rgba(95, 97, 217, 0.4);
+  color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 8px 0px rgb(34, 75, 239);
+  font-family: 'Comic Sans MS';
+}
+.clock{
+  font-family: 'Oswald', sans-serif;
+  background-color: rgba(0, 0, 0, .6);
+  width: 112px;
+  height: 53px;
+  margin: 10px auto;
+  padding-right: 12px;
+  color: cadetblue;
+  border: double 2px rgb(0, 0, 0);
+}
+#hour--box{
+  display: flex;
+  gap: 8px;
+  max-width: -25px;
+  justify-content: center;
+  position: relative;
+}
+.hour__box-p1{
+  position: relative;
+  right: 16px;
+  top: 13px;
+  font-weight: initial;
+  font-size: 25px;
+}
+.hour__box-p2{
+  position: relative;
+  right: -17px;
+  top: -24px;
+  font-weight: initial;
+  font-size: 25px;
+}
+.hour__box-p3{
+  position: relative;
+  right: -38px;
+  top: -50px;
+  font-size: 16px;
+  font-weight: normal;
+}
