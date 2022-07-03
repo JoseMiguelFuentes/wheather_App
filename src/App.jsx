@@ -32,7 +32,7 @@ function App() {
   const [tempUnits, setTempUnits] = useState ('metric') //Used to save temperature measurement units.
   const [background, setBackground] = useState ('main-box')//keeping classes to set wallpaper
   const [icon, setIcon] = useState ()//keeping classes to set wallpaper
-
+  /*  Getting the current position  from de device */
   const success = (pos)=>{
     let lat = pos.coords.latitude
     let lon = pos.coords.longitude
@@ -48,23 +48,23 @@ function App() {
      maximumAge: 0
    }
 
-  /*  Getting the current position  from de device */
+  
   useEffect(()=>{
     navigator.geolocation.getCurrentPosition(success, error, options);
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${apiKey}&lang=sp&units=${tempUnits}`)
     .then(res =>  setWeatherData(res.data))
   },[])
+  //render when location is updated
   useEffect(()=>{
-    
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${apiKey}&lang=sp&units=${tempUnits}`)
     .then(res =>  setWeatherData(res.data))
   },[location])
+//get the icon when we got data of the weather
   useEffect(()=>{
       setIcon(`http://openweathermap.org/img/wn/${weatherData.weather?.[0].icon}@2x.png`)
-    
   },[weatherData])
 
-
+  //Update when the temperatures units is changed
   useEffect( ()=>{
     axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${apiKey}&lang=sp&units=${tempUnits}`)
     .then(res =>  setWeatherData(res.data))
@@ -107,16 +107,8 @@ function App() {
       default:
         setBackground('main-box default');
     }
-    
-    
-    
 },[weatherData])  
-  // useEffect(()=>{
-    
-  //   axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${tempUnits}`)
-  //   .then(res =>  setWeatherData(res.data))
-  //   console.log('Segundo Effect')
-  // },[tempUnits])
+  
 
   
 
@@ -125,13 +117,9 @@ function App() {
   const changeTempUnits = () => {
     if(tempUnits === 'imperial'){
       setTempUnits ('metric')
-      // axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${tempUnits}`)
-      // .then(res =>  setWeatherData(res.data))
       console.log(tempUnits) 
     }else{
       setTempUnits ('imperial')
-      // axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${tempUnits}`)
-      // .then(res =>  setWeatherData(res.data))
       console.log(tempUnits)
     }
   }
